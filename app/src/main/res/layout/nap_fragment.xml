@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/napTopAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:outlineSpotShadowColor="@android:color/transparent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/napTopAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Nap Settings"
+                app:titleTextColor="@color/white"
+                app:menu="@menu/nap_menu"
+                app:navigationIcon="@drawable/ic_go_back"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/napTopAppBarLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/goBackLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:gravity="center_vertical">-->
+
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/goBackButton"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    style="@style/Widget.Material3.Button.IconButton"-->
+<!--                    app:icon="@drawable/ic_go_back"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/napString"-->
+<!--                    android:textSize="25sp"/>-->
+
+<!--            </LinearLayout>-->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/napEnableCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/alarmCardGrey"
+                app:strokeColor="@color/alarmCardGrey"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/enableTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/napStateString"
+                        android:textSize="20sp"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/napEnableSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/durationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/napEnableCard"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Duration"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/napDurationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/durationTextView"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/alarmCardGrey"
+                app:strokeColor="@color/alarmCardGrey"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/napDurationRecView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/customCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/napDurationRecView"
+                        app:cardCornerRadius="0dp"
+                        app:strokeColor="@color/alarmCardGrey"
+                        android:backgroundTint="@color/alarmCardGrey"
+                        app:rippleColor="@color/alarmCardRipple"
+                        android:clickable="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/napDurationRecView"
+                            android:layout_marginHorizontal="10dp">
+
+                            <RadioButton
+                                android:id="@+id/customRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/customTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Custom"/>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/minutePickerLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/customCard"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:visibility="gone">
+
+                        <NumberPicker
+                            android:id="@+id/minutesPicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:selectionDividerHeight="0dp"/>
+
+                        <TextView
+                            android:id="@+id/minuteTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Minute"
+                            android:textSize="25sp"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/amountTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/napDurationCard"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="The number of repeatitions"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/napAmountCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/amountTextView"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/alarmCardGrey"
+                app:strokeColor="@color/alarmCardGrey"
+                app:cardCornerRadius="20dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/napAmountRecView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/AlarmRecViewParent"
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/alarmCard"
+        android:backgroundTint="@color/alarmCardGrey"
+        app:cardCornerRadius="20dp"
+        app:strokeColor="@color/orangeVariant"
+        app:strokeWidth="0dp"
+        app:rippleColor="@color/alarmCardRipple"
+        android:clickable="true"
+        android:longClickable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/alarmCardSelectBox"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/alarmCardText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/alarmCardSelectBox"
+                android:layout_above="@+id/alarmCardTimeText"
+                android:layout_marginStart="11dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:ignore="RtlHardcoded" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/alarmCardTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/alarmCardSelectBox"
+                android:layout_marginStart="10dp"
+                android:textSize="30sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/alarmCardSwitchButton"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                tools:ignore="RelativeOverlap">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mondayLetterDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mondayLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tuesdayLetterDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:gravity="center_horizontal" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tuesdayLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/wednesdayLetterDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:gravity="center_horizontal" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/wednesdayLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/thursdayLetterDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:gravity="center_horizontal" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/thursdayLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/fridayLetterDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:gravity="center_horizontal" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/fridayLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/saturdayLetterDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:gravity="center_horizontal" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/saturdayLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/sundayLetterDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:gravity="center_horizontal" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/sundayLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/alarmCardSwitchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:checked="false"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

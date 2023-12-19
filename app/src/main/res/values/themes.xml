@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.android_nixie_v2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/orangeVariant</item>
+        <item name="colorPrimaryContainer">@color/orange</item>
+        <item name="colorOnPrimary">@color/orange</item>
+        <item name="colorOnPrimaryContainer">@color/orangeVariant</item>
+        <item name="colorOutline">@color/my_outline</item>
+        <item name="colorOnSurface">@color/my_on_surface</item>
+        <item name="colorSurfaceVariant">@color/my_surface</item>
+        <item name="colorOnSurfaceVariant">@color/my_on_surface</item>
+        <item name="colorPrimaryDark">@color/black</item>
+
+        <item name="android:textColor">@color/my_text_color</item>
+
+    </style>
+
+    <style name="TimePicker" parent="ThemeOverlay.Material3.MaterialTimePicker">
+
+        <item name="colorSurface">@color/black</item>
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryContainer">@color/my_on_surface</item>
+        <item name="colorOnSurface">@color/orange</item>
+        <item name="colorOnPrimaryContainer">@color/orange</item>
+        <item name="colorSurfaceVariant">#2E2E2E</item>
+        <item name="colorOnBackground">@color/my_on_surface</item>
+
+    </style>
+
+    <style name="DatePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+
+        <item name="colorSurface">@color/black</item>
+        <item name="colorPrimary">@color/orangeVariant</item>
+        <item name="colorPrimaryContainer">@color/my_on_surface</item>
+        <item name="colorOnSurface">@color/orange</item>
+        <item name="colorOnPrimaryContainer">@color/orange</item>
+        <item name="colorSurfaceVariant">#2E2E2E</item>
+        <item name="colorOnBackground">@color/my_on_surface</item>
+
+    </style>
+
+    <style name="Theme.android_nixie_v2" parent="Base.Theme.android_nixie_v2" />
+</resources>

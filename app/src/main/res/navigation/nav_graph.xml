@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MenuFragment">
+
+    <fragment
+        android:id="@+id/MenuFragment"
+        android:name="com.example.android_nixie_v2.MenuFragment"
+        android:label="@string/menu_fragment_label"
+        tools:layout="@layout/fragment_menu">
+
+        <action
+            android:id="@+id/action_MenuFragment_to_AlarmFragment"
+            app:destination="@id/AlarmFragment" />
+
+        <action
+            android:id="@+id/action_MenuFragment_to_WifiFragment"
+            app:destination="@id/WifiFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/AlarmFragment"
+        android:name="com.example.android_nixie_v2.AlarmFragment"
+        android:label="@string/alarm_fragment_label"
+        tools:layout="@layout/fragment_alarm">
+
+        <action
+            android:id="@+id/action_AlarmFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/WifiFragment"
+        android:name="com.example.android_nixie_v2.WifiFragment"
+        android:label="@string/wifi_fragment_label"
+        tools:layout="@layout/fragment_wifi">
+
+        <action
+            android:id="@+id/action_WifiFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+
+    </fragment>
+
+</navigation>

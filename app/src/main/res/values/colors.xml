@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FF8D02</color>
+    <color name="orangeVariant">#FFE2B0</color>
+    <color name="alarmCardGrey">#171717</color>
+    <color name="alarmCardRipple">#7a7a7a</color>
+    <color name="sundayRed">#be0000</color>
+    <color name="blue">#03A9F4</color>
+    <color name="green">#23B30A</color>
+
+    <color name="my_outline">#777777</color>
+    <color name="my_surface">#414141</color>
+    <color name="my_on_surface">#777777</color>
+    <color name="my_surface_secondary">#292828</color>
+    <color name="my_text_color">#C8C8C8</color>
+    <color name="my_text_color_disable">#6C6C6C</color>
+    <color name="my_container_color">#000000</color>
+
+</resources>

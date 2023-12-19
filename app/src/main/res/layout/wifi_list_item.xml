@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/WifiRecViewParent"
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wifiCard"
+        android:backgroundTint="@color/alarmCardGrey"
+        app:cardCornerRadius="20dp"
+        app:strokeColor="@color/orangeVariant"
+        app:strokeWidth="0dp"
+        app:rippleColor="@color/alarmCardRipple"
+        android:clickable="true"
+        android:longClickable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/wifiCardNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="11dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:ignore="RtlHardcoded" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/wifiCardRssiText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/wifiCardNameText"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="100dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:ignore="RtlHardcoded" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/wifiCardAuthText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/wifiCardNameText"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:ignore="RtlHardcoded" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

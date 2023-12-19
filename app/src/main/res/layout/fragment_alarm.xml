@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="10dp"
+    tools:context=".AlarmFragment"
+    android:id="@+id/menuFragment">
+
+    <RelativeLayout
+        android:id="@+id/repeatModeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/repeatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/repeatModeString"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/repeatModeToggleGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/repeatTextView"
+            android:layout_marginTop="5dp"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:checkedButton="@+id/weeklyButton"
+            android:visibility="visible">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/singleButton"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/singleButtonString"
+                android:textColor="@color/orange"
+                android:textSize="11sp"
+                tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/weeklyButton"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/weeklyButtonString"
+                android:textSize="11sp"
+                android:textColor="@color/orange"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/monthlyButton"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:text="@string/monthlyButtonString"
+                android:textSize="11sp"
+                android:textColor="@color/orange"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/yearlyButton"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/yearlyButtonString"
+                android:textSize="11sp"
+                android:textColor="@color/orange"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/timeLinLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/repeatModeLayout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/timeInputEditTextLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:errorEnabled="true"
+            app:endIconMode="clear_text"
+            android:hint="@string/timeHintString">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/timeInputEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:text="@string/timeString" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/timePickerBtn"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_time_picker"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dateLinLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/timeLinLayout">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dateTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="18dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/datePickerBtn"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_date_picker"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/daysLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateLinLayout"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/monLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/monCheckBox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/monCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/mondayCheckBoxString" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tueLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/wenLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/monLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/tueCheckBox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tueCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/tuesdayCheckBoxString" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/wenLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/thuLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tueLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/wenCheckBox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wenCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/wednesdayCheckBoxString" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/thuLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/friLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/wenLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/thuCheckBox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thuCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/thursdayCheckBoxString" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/friLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/satLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/thuLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/friCheckBox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/friCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/fridayCheckBoxString" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/satLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sunLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/friLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/satCheckBox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/satCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/saturdayCheckBoxString" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sunLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/sunCheckBox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sunCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sundayCheckBoxString"
+                android:textColor="@color/sundayRed"
+                tools:ignore="TextContrastCheck" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descriptionInputEditTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/daysLayout"
+        android:layout_marginTop="20dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        android:hint="@string/descriptionHintString"
+        app:counterEnabled="true"
+        app:counterMaxLength="40" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/descriptionInputEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/optionsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionInputEditTextLayout"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:backgroundTint="@color/alarmCardGrey"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alarmSoundString"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defaultRingtoneString" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_volume_mute"
+                    android:contentDescription="@string/lowVolumeDescriptionString"/>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/soundSlider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:value="100"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:labelBehavior="gone"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_volume_up"
+                    android:contentDescription="@string/highVolumeDescriptionString"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saveString"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/progressIndicator"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/progressIndicator"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:text="@string/cancelString"
+            android:textColor="@color/sundayRed"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
